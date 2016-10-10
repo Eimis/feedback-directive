@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Simple Form</title>
+</head>
+<body>
+    <div ng-app="simple-feedback" id="feedback">
+        <div id="feedback-form" style='display:none;' class="col-xs-4 col-md-4 panel panel-default">
+                <div class="form-group">
+                    <input class="form-control" name="email" autofocus placeholder="Your e-mail" type="email" />
+                </div>
+                <div class="form-group">
+                        <textarea class="form-control" name="body" required placeholder="Please write your feedback here..." rows="5">
+                        <!--Close textarea in above line-->
+                </div>
+                <button class="btn btn-primary pull-right" type="submit">Send</button>
+        </div>
+        <div id="feedback-tab">Feedback</div>
+    </div>
+</body>
+</html>
