@@ -2,8 +2,6 @@
 
 angular.module('feedback.module', ['ngAnimate'])
 	.directive('feedback', function () {
-		var value = 0;
-
 		return {
 			restrict: 'AE',
 			templateUrl: 'feedback.html',
@@ -12,33 +10,28 @@ angular.module('feedback.module', ['ngAnimate'])
 				$scope.tabVisible = false;
 
 				$scope.toggleTabVisibility = function() {
-					$scope.tabVisible = !$scope.tabVisible;
-				};
-
-				$scope.getValue = function () {
-					return value;
-				};
-				$scope.increment = function () {
-					value++;
+					$("#feedback-form").toggle("slide");
+					//$scope.tabVisible = !$scope.tabVisible;
 				};
 			}
 		};
 	})
-	.animation('.animate-show', function() {
-		var NG_HIDE_CLASS = 'ng-hide';
-		var DURATION = 500;
-		return {
-			addClass: function(element, className, done) {
-				if(className === NG_HIDE_CLASS) {
-					jQuery(element).slideToggle(DURATION, done);
-				}
-				//done();
-			},
-			removeClass: function(element, className, done) {
-				if(className === NG_HIDE_CLASS) {
-					jQuery(element).slideToggle(DURATION, done);
-				}
-				//done();
-			}
-		};
-	});
+	//.animation('.animate-show', function() {
+	//	var NG_HIDE_CLASS = 'ng-hide';
+	//	var DURATION = 500;
+	//	return {
+	//		beforeAddClass: function(element, className, done) {
+	//			if(className === NG_HIDE_CLASS) {
+	//				jQuery(element).toggle(DURATION, done);
+	//			}
+	//			//done();
+	//		},
+	//		removeClass: function(element, className, done) {
+	//			if(className === NG_HIDE_CLASS) {
+	//				jQuery(element).toggle(DURATION, done);
+	//			}
+	//			//done();
+	//		}
+	//	};
+	//})
+;
