@@ -15,7 +15,7 @@ angular.module('feedback.module', ['ngAnimate'])
 					$("#feedback-form").toggle("slide");
 				};
 
-				$scope.sendFeedback = function() {
+				$scope.submit = function() {
 					$scope.data = {
 						email: $scope.feedbackEmail,
 						content: $scope.feedbackContent

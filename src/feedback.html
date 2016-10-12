@@ -1,5 +1,5 @@
 <div id="feedback">
-    <div id="feedback-form" class="animate-show" class="col-xs-4 col-md-4 panel panel-default">
+    <div id="feedback-form" ng-submit="submit()" class="animate-show" class="col-xs-4 col-md-4 panel panel-default">
         <form class="form panel-body" role="form">
             <div class="form-group">
                 <input class="form-control" ng-model="feedbackEmail" name="email" autofocus placeholder="Your e-mail" type="email"/>
@@ -7,7 +7,7 @@
             <div class="form-group">
                 <textarea class="form-control" name="body" ng-model="feedbackContent" required placeholder="Please write your feedback here..." rows="5"/>
             </div>
-            <button class="btn btn-primary pull-right" ng-click="sendFeedback()">Send</button>
+            <button class="btn btn-primary pull-right" >Send</button>
         </form>
     </div>
     <div id="feedback-tab" ng-click="toggleTabVisibility()">Feedback</div>
