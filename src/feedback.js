@@ -3,35 +3,29 @@
 angular.module('feedback.module', ['ngAnimate'])
 	.directive('feedback', function () {
 		return {
+			scope: {
+				callback: '='
+			},
 			restrict: 'AE',
 			templateUrl: 'feedback.html',
 			replace: true,
-			link: function ($scope) {
-				$scope.tabVisible = false;
-
+			controller: function($scope) {
 				$scope.toggleTabVisibility = function() {
+					// TODO use angular-animation to do the toggle
 					$("#feedback-form").toggle("slide");
-					//$scope.tabVisible = !$scope.tabVisible;
 				};
+
+				$scope.sendFeedback = function() {
+					$scope.data = {
+						email: $scope.feedbackEmail,
+						content: $scope.feedbackContent
+					};
+					if ($scope.callback)
+						$scope.callback($scope.data);
+				};
+
+			},
+			link: function ($scope) {
 			}
 		};
-	})
-	//.animation('.animate-show', function() {
-	//	var NG_HIDE_CLASS = 'ng-hide';
-	//	var DURATION = 500;
-	//	return {
-	//		beforeAddClass: function(element, className, done) {
-	//			if(className === NG_HIDE_CLASS) {
-	//				jQuery(element).toggle(DURATION, done);
-	//			}
-	//			//done();
-	//		},
-	//		removeClass: function(element, className, done) {
-	//			if(className === NG_HIDE_CLASS) {
-	//				jQuery(element).toggle(DURATION, done);
-	//			}
-	//			//done();
-	//		}
-	//	};
-	//})
-;
+	});

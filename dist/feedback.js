@@ -1,7 +1,7 @@
 /*!
  * angular-directive-boilerplate
  * 
- * Version: 0.0.8 - 2016-10-11T20:16:33.454Z
+ * Version: 0.0.8 - 2016-10-12T22:29:58.907Z
  * License: MIT
  */
 
@@ -11,37 +11,31 @@
 angular.module('feedback.module', ['ngAnimate'])
 	.directive('feedback', function () {
 		return {
+			scope: {
+				callback: '='
+			},
 			restrict: 'AE',
 			templateUrl: 'feedback.html',
 			replace: true,
-			link: function ($scope) {
-				$scope.tabVisible = false;
-
+			controller: function($scope) {
 				$scope.toggleTabVisibility = function() {
+					// TODO use angular-animation to do the toggle
 					$("#feedback-form").toggle("slide");
-					//$scope.tabVisible = !$scope.tabVisible;
 				};
+
+				$scope.sendFeedback = function() {
+					$scope.data = {
+						email: $scope.feedbackEmail,
+						content: $scope.feedbackContent
+					};
+					if ($scope.callback)
+						$scope.callback($scope.data);
+				};
+
+			},
+			link: function ($scope) {
 			}
 		};
-	})
-	//.animation('.animate-show', function() {
-	//	var NG_HIDE_CLASS = 'ng-hide';
-	//	var DURATION = 500;
-	//	return {
-	//		beforeAddClass: function(element, className, done) {
-	//			if(className === NG_HIDE_CLASS) {
-	//				jQuery(element).toggle(DURATION, done);
-	//			}
-	//			//done();
-	//		},
-	//		removeClass: function(element, className, done) {
-	//			if(className === NG_HIDE_CLASS) {
-	//				jQuery(element).toggle(DURATION, done);
-	//			}
-	//			//done();
-	//		}
-	//	};
-	//})
-;
+	});
 
-angular.module("feedback.module").run(["$templateCache", function($templateCache) {$templateCache.put("feedback.html","<div id=\"feedback\"><div id=\"feedback-form\" class=\"animate-show\"><form method=\"POST\" action=\"/feedback\" class=\"form panel-body\" role=\"form\"><div class=\"form-group\"><input class=\"form-control\" name=\"email\" autofocus=\"\" placeholder=\"Your e-mail\" type=\"email\"></div><div class=\"form-group\"><textarea class=\"form-control\" name=\"body\" required=\"\" placeholder=\"Please write your feedback here...\" rows=\"5\">\n                \n            </textarea></div><button class=\"btn btn-primary pull-right\" type=\"submit\">Send</button></form></div><div id=\"feedback-tab\" ng-click=\"toggleTabVisibility()\">Feedback</div></div>");}]);
+angular.module("feedback.module").run(["$templateCache", function($templateCache) {$templateCache.put("feedback.html","<div id=\"feedback\"><div id=\"feedback-form\" class=\"animate-show\"><form class=\"form panel-body\" role=\"form\"><div class=\"form-group\"><input class=\"form-control\" ng-model=\"feedbackEmail\" name=\"email\" autofocus=\"\" placeholder=\"Your e-mail\" type=\"email\"></div><div class=\"form-group\"><textarea class=\"form-control\" name=\"body\" ng-model=\"feedbackContent\" required=\"\" placeholder=\"Please write your feedback here...\" rows=\"5\">\n            </textarea></div><button class=\"btn btn-primary pull-right\" ng-click=\"sendFeedback()\">Send</button></form></div><div id=\"feedback-tab\" ng-click=\"toggleTabVisibility()\">Feedback</div></div>");}]);
