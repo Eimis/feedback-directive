@@ -16,7 +16,7 @@ npm install feedback-directive
 ```
 
 #### Implement callback in your controller
-```html
+```javascript
 $scope.doSomething = function(data) {
     console.log("feedback from " + data.email ": " + feedback.content);
 }
