@@ -1,0 +1,6 @@
+{
+  "name": "Feedback-directive",
+  "tagline": "",
+  "body": "# Feedback Directive\r\n\r\nThis is a simple AngularJS feedback directive to help you easily add feedback / contact capability for application.\r\n\r\n## Usage\r\n\r\n#### Install via NPM \r\n\r\n```shell\r\nnpm install feedback-directive\r\n```\r\n\r\n#### Include directive in your HTML\r\n```html\r\n<feedback callback=\"onFeedbackSent\"></feedback>\r\n```\r\n\r\n#### Implement callback in your controller\r\n```javascript\r\n$scope.onFeedbackSent = function(data) {\r\n    console.log(\"feedback from \" + data.email \": \" + feedback.content);\r\n}\r\n```\r\n\r\n### License\r\nMIT\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
