@@ -1,24 +1,23 @@
-# Bower Publishable Angular Directive Boilerplate
+# Feedback Directive
 
-This is a simple AngularJS directive boilerplate to help you start your own AngularJS directive and publish it in Bower and NPM.
-This readme file itself is a boilerplate.
+This is a simple AngularJS feedback directive to help you easily add feedback / contact capability for application.
 
-#### Using the boilerplate
-Clone the project and install dependencies, then use Gulp to start the project.
-```shell
-git clone git@github.com:mohsen1/angular-directive-boilerplate.git my-directive
-cd my-directive
-npm install
-bower install
-gulp serve
-```
-#### Install via NPM or bower
+#### Install via NPM 
 
 ```shell
 npm install angular-directive-boilerplate
 ```
+
+#### Include directive in your HTML
 ```shell
-bower install angular-directive-boilerplate
+<feedback callback="onFeedbackSent"></feedback>
+```
+
+#### Implement callback in your controller
+```shell
+$scope.doSomething = function(data) {
+    console.log("feedback from " + data.email ": " + feedback.content);
+}
 ```
 
 ### License
