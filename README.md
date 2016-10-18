@@ -2,6 +2,8 @@
 
 This is a simple AngularJS feedback directive to help you easily add feedback / contact capability for application.
 
+## Demo
+Checkout the [demo page]
 ## Usage
 
 #### Install via NPM 
@@ -24,3 +26,5 @@ $scope.onFeedbackSent = function(data) {
 
 ### License
 MIT
+
+[demo page]: <https://chenop.github.io/feedback-directive>
