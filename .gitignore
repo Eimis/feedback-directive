@@ -2,5 +2,4 @@
 .gitignore
 .idea/
 #bower_components/
-dist/
 feedback-directive-module.iml
