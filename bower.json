@@ -1,0 +1,26 @@
+{
+  "name": "feedback-directive",
+  "version": "0.0.8",
+  "authors": [
+    "Chen Oppenhaim <chenop@gmail.com>"
+  ],
+  "description": "Feedback directive",
+  "main": "dist/directive.js, dist/directive.js",
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "angular": "~1",
+    "angular-sanitize": "~1",
+    "angular-mocks": "~1",
+    "angular-animate": "~1",
+    "jquery": "^3.1.1"
+  }
+}
