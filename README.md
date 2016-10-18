@@ -3,7 +3,7 @@
 This is a simple AngularJS feedback directive to help you easily add feedback / contact capability for application.
 
 ## Demo
-Checkout the [demo page]
+Checkout the [demo page].
 ## Usage
 
 #### Install via NPM 
