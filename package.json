@@ -1,6 +1,6 @@
 {
   "name": "feedback-directive",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Feedback Directive",
   "repository": "https://github.com/chenop/feedback-directive-module.git",
   "main": "dist/feedback.js",
