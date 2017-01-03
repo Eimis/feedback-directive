@@ -5,6 +5,17 @@
   height: 250px;
   margin-left: -3px;
   margin-bottom: -3px;
+
+  @media (min-width: 298px) {
+    #feedback {
+      display: none;
+    }
+  }
+  @media (min-width: 577px) {
+    #feedback {
+      display: block;
+    }
+  }
 }
 
 #feedback-form {
