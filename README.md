@@ -12,6 +12,12 @@ Checkout the [demo page].
 npm install feedback-directive
 ```
 
+#### Add 'feedback.module' to modules list
+
+```javascript
+var app = angular.module('easywork', ['feedback.module']);
+```
+
 #### Include directive in your HTML
 ```html
 <feedback callback="onFeedbackSent"></feedback>
